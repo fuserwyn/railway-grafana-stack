@@ -6,6 +6,13 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  - job_name: 'leo-bot'
+    scheme: http
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['perpetual-gratitude.railway.internal:8080']
+
   # - job_name: 'example_api'
   #   scheme: http
   #   static_configs:
